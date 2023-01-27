@@ -2,6 +2,10 @@
 
 .container { 
     padding: 2.863vw 3.681vw 0vw 3.681vw;
+
+    @media screen and (min-width: 580px){
+        padding: 3.863vw 5.681vw 0vw 5.681vw;
+    }
 }
 
 body { 

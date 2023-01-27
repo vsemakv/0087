@@ -192,6 +192,12 @@ import VOwner from '@/components/VOwner.vue';
                             left: -4.476vw;
                             top: 0vw;
                         }
+                        @media screen and (min-width: 580px){
+                            width: 3.454vw;
+                            height: 3.198vw;
+                            left: -2.476vw;
+                            top: 0vw;
+                        }
                     }
                 }
                 &:nth-child(2){
@@ -210,6 +216,12 @@ import VOwner from '@/components/VOwner.vue';
                             left: -4.476vw;
                             top: 0vw;
                         }
+                        @media screen and (min-width: 580px){
+                            width: 3.454vw;
+                            height: 3.198vw;
+                            left: -2.476vw;
+                            top: 0.3vw;
+                        }
                     }
                 }
             }
@@ -218,7 +230,11 @@ import VOwner from '@/components/VOwner.vue';
     &__review { 
         height: 100%;
         overflow-y: scroll;
-        padding-bottom: 182px;
+        padding-bottom: 37.219vw;
+
+        @media screen and (min-width: 768px) and (max-width: 1100px){
+            padding-bottom: 0;
+        }
     }
     &__form {
         display: flex;
@@ -236,7 +252,9 @@ import VOwner from '@/components/VOwner.vue';
         @media screen and (min-width: 580px){
             min-height: 29.059vw;
         }
-
+        @media screen and (min-width: 768px) and (max-width: 1100px){
+            position: relative;
+        }
         &-input {
             border: 0.204vw solid #000000;
             border-radius: 0.204vw;
@@ -267,6 +285,7 @@ import VOwner from '@/components/VOwner.vue';
 
             @media screen and (min-width: 580px){
                 padding: 1.658vw 8.816vw;
+                margin-top: 2.703vw;
             }
         }
     }

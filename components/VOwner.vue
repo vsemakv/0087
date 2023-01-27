@@ -127,6 +127,10 @@
                 font-size: 2.863vw;
                 line-height: 4.090vw;
                 color: #333333;
+
+                @media screen and (min-width: 580px){
+                    padding-left: 14.18vw;
+                }
             }
         }
     }

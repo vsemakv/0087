@@ -1,1 +1,11 @@
-{}
+{
+  "VComment": {
+    "description": "Auto imported from components/VComment.vue"
+  },
+  "VOwner": {
+    "description": "Auto imported from components/VOwner.vue"
+  },
+  "VProfile": {
+    "description": "Auto imported from components/VProfile.vue"
+  }
+}

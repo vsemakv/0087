@@ -1,4 +1,6 @@
-
+export { default as VComment } from '../../components/VComment.vue'
+export { default as VOwner } from '../../components/VOwner.vue'
+export { default as VProfile } from '../../components/VProfile.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

@@ -3,9 +3,9 @@
             .comment__title
                 p.comment__owner  {{ name }}  
                 .comment__date 
-                    span {{ day }} 
-                    span {{ month }} 
-                    span {{ year }} 
+                    span {{ day }}  
+                    span {{ month }}  
+                    span {{ year }}  
             .comment__content
                 p.comment__content-text {{ comment }}
 </template>
@@ -53,11 +53,19 @@
         line-height: 3.885vw;
     }
     &__date {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
         & > span { 
             color: #808080;
             font-weight: 400;
             font-size: 2.249vw;
             line-height: 3.885vw;
+
+            &:nth-child(2){
+                margin: 0px 3px;
+            }
         }
     }
     &__content {

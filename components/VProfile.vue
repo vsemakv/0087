@@ -88,10 +88,15 @@ import VOwner from '@/components/VOwner.vue';
         },
         watch: { 
             comment(){
-                if(this.comment.length !== 0){
+                if(this.comment.length !== 0 ){
                     this.isEmpty = false
                 }else {
                     this.isEmpty = true
+                }
+                if(this.comment == " " ){
+                    this.isEmpty = true
+                }else {
+                    this.isEmpty = false
                 }
             }
         },
@@ -120,7 +125,7 @@ import VOwner from '@/components/VOwner.vue';
             document.addEventListener('keydown', (event) => {
                 this.keysPressed[event.key] = true;
 
-                if (this.keysPressed['Control'] && event.key == 'Enter') {
+                if (this.keysPressed['Control'] && event.key == 'Enter' && this.comment !== "" && this.comment !== " ") {
                     this.addComment();
                 }
             });

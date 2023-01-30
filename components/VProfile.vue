@@ -253,6 +253,7 @@ import VOwner from '@/components/VOwner.vue';
 
         position: fixed;
         bottom: 0vw;
+        z-index: 3;
 
         @media screen and (min-width: 580px){
             min-height: 29.059vw;

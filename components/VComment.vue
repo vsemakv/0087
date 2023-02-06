@@ -3,9 +3,7 @@
             .comment__title
                 p.comment__owner  {{ name }}  
                 .comment__date 
-                    span {{ day }}  
-                    span {{ month }}  
-                    span {{ year }}  
+                    span {{ day }}
             .comment__content
                 p.comment__content-text {{ comment }}
 </template>
@@ -18,14 +16,6 @@
                 default: null
             },
             day: {
-                type: String,
-                default: null
-            },
-            month: {
-                type: String,
-                default: null
-            },
-            year: {
                 type: String,
                 default: null
             },

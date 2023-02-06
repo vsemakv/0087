@@ -22,10 +22,7 @@
             .profile__review
                 .profile__review-comments(v-for="commentator in commentators" :key="commentator.id")
                     VComment(
-                        :name="commentator.name"
-                        :day="commentator.day" 
-                        :month="commentator.month" 
-                        :year="commentator.year" 
+                        :day="commentator.day"
                         :comment="commentator.comment"
                     )
         .profile__form
@@ -47,25 +44,19 @@ import VOwner from '@/components/VOwner.vue';
                         id: 0,
                         name: "Samuel Jackson",
                         comment: "Hey Eva! You're cool. Nice pic!",
-                        day: "13",
-                        month: "Apr",
-                        year: "2022"
+                        day: "13 Apr 2022",
                     },
                     {
                         id: 1,
                         name: "Angela Deimon",
                         comment: "Thanks for your services! We really liked the ocean view room. We hope to cooperate in the near future. We are sure you will do everything to make our next holiday fantastic.",
-                        day: "10",
-                        month: "Apr",
-                        year: "2022"
+                        day: "10 Apr 2022",
                     },
                     {
                         id: 2,
                         name: "Ronald Harris",
                         comment: "Eva, hello! There is such a question: How can I contact you if I am abroad in roaming?",
-                        day: "8",
-                        month: "Apr",
-                        year: "2022"
+                        day: "8 Apr 2022",
                     },
                 ],
                 owners: [
@@ -90,13 +81,20 @@ import VOwner from '@/components/VOwner.vue';
             comment(){
                 if(this.comment.length !== 0 ){
                     this.isEmpty = false
-                }else {
+                }else{
                     this.isEmpty = true
                 }
-                if(this.comment == " " ){
+
+                if(this.comment == " ") { 
                     this.isEmpty = true
-                }else {
+                }else { 
                     this.isEmpty = false
+                }
+
+                if(this.comment == "") { 
+                    this.isEmpty = false
+                }else { 
+                    this.isEmpty = true
                 }
             }
         },

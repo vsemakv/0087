@@ -1,3 +1,6 @@
+Pet project 
+Simulating viewing a profile and adding a comment
+
 # 0087
 
 ## Build Setup

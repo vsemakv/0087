@@ -111,8 +111,10 @@
             position: absolute;
             bottom: 2.045vw;
             right: 0vw;
+            overflow: hidden;
+            overflow-y: inherit;
             
-            padding-top: 1.636vw;
+            padding: 1.636vw 0vw;
 
             width: 74.642vw;
             height: 11.043vw;

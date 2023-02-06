@@ -33,6 +33,10 @@
 
     &__title { 
         display: flex;
+
+        @media screen and (min-width: 1024px){
+            
+        }
     }
     &__owner { 
         margin-right: 1.636vw;
@@ -41,6 +45,12 @@
         font-weight: 700;
         font-size: 2.863vw;
         line-height: 3.885vw;
+
+        @media screen and (min-width: 1024px){
+            margin-right: 0.781vw;
+            font-size: 1.367vw;
+            line-height: 1.855vw;
+        }
     }
     &__date {
         display: flex;
@@ -53,8 +63,9 @@
             font-size: 2.249vw;
             line-height: 3.885vw;
 
-            &:nth-child(2){
-                margin: 0px 3px;
+            @media screen and (min-width: 1024px){
+                font-size: 1.074vw;
+                line-height: 1.855vw;
             }
         }
     }
@@ -67,6 +78,13 @@
         padding: 4.090vw;
         position: relative;
 
+        @media screen and (min-width: 1024px){
+            margin-top: 1.3vw;
+            border: 0.098vw solid #C4CBCF;
+            box-shadow: 0vw 0.418vw 1.045vw rgba(128, 128, 128, 0.1);
+            padding: 2vw;
+        }
+
         &::after { 
             content: "";
             display: block;
@@ -78,6 +96,12 @@
             border-color: transparent transparent transparent #F2FBFF;
             left: 4.139vw;
             top: -1.636vw;
+
+            @media screen and (min-width: 1024px){
+                border-width: 1.970vw 0 0 1.970vw;
+                left: 2.079vw;
+                top: -0.976vw;
+            }
         }
         &::before { 
             content: "";
@@ -90,6 +114,12 @@
             border-color: transparent transparent transparent #C4CBCF;
             left: 3.885vw;
             top: -2.249vw;
+
+            @media screen and (min-width: 1024px){
+                border-width: 1.240vw 0 0 1.240vw;
+                left: 1.979vw;
+                top: -1.216vw;
+            }
         }
 
         &-text { 
@@ -97,6 +127,11 @@
             font-weight: 400;
             font-size: 2.863vw;
             line-height: 3.885vw;
+
+            @media screen and (min-width: 1024px){
+                font-size: 1.367vw;
+                line-height: 1.855vw;
+            }
         }
     }
 }

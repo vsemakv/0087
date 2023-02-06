@@ -73,18 +73,27 @@
 
 <style lang="scss" scoped>
 .owner { 
-
+    @media screen and (min-width: 1024px){
+        display: flex;
+    }
     &__main { 
         display: flex;
 
         width: 100%;
-
+        @media screen and (min-width: 1024px){
+            width: 50%;
+        }
         & > img { 
             border-radius: 50%;
             width: 25.358vw;
             height: 25.358vw;
             position: relative;
             z-index: 2;
+
+            @media screen and (min-width: 1024px){
+                width: 12.109vw;
+                height: 12.109vw;
+            }
         }
 
         &-text { 
@@ -99,12 +108,22 @@
                 font-size: 3.272vw;
                 line-height: 4.090vw;
                 color: 33333;
+
+                @media screen and (min-width: 1024px){
+                    font-size: 1.563vw;
+                    line-height: 1.953vw;
+                }
             }
             & > p:nth-child(2) { 
                 font-weight: 400;
                 font-size: 2.454vw;
                 line-height: 4.090vw;
                 color: #808080;
+                
+                @media screen and (min-width: 1024px){
+                    font-size: 1.172vw;
+                    line-height: 1.953vw;
+                }
             }
         }
         &-desc { 
@@ -122,6 +141,20 @@
             border: 0.204vw solid #DADADA;
             border-radius: 1.022vw;
             
+
+            @media screen and (min-width: 1024px){
+                top: 6vw;
+                left: -7.8vw;
+
+                width: 35.547vw;
+                height: 5.273vw;
+                padding: 0.336vw 0vw;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
             & > p { 
                 width: 41.104vw;
                 padding-left: 10.18vw;
@@ -133,6 +166,13 @@
                 @media screen and (min-width: 580px){
                     padding-left: 14.18vw;
                 }
+
+                @media screen and (min-width: 1024px){
+                    font-size: 1.367vw;
+                    line-height: 1.953vw;
+                    padding-left: 4.395vw;
+                    width: 19.629vw;
+                }
             }
         }
     }
@@ -140,6 +180,10 @@
         padding-left: 26.585vw;
         color: #333333;
 
+        @media screen and (min-width: 1024px){
+            padding-left: 3vw;
+            width: 50%;
+        }
         &-title { 
             text-align: right;
             padding-right: 4.908vw;
@@ -147,6 +191,13 @@
             font-weight: 400;
             font-size: 2.658vw;
             line-height: 3.067vw;
+
+            @media screen and (min-width: 1024px){
+                font-size: 1.270vw;
+                line-height: 1.465vw;
+                margin-bottom: 0.781vw;
+                padding-right: 2.458vw;
+            }
         }
         &-list { 
             width: 100%;
@@ -161,6 +212,9 @@
                 background-color: #DADADA;
                 bottom: 0vw;
                 left: 0vw;
+                @media screen and (min-width: 1024px){
+                    height: 0.098vw;
+                }
             }
             &::before {
                 position: absolute;
@@ -171,6 +225,13 @@
                 background-color: #DADADA;
                 top: 0vw;
                 left: 0vw;
+                @media screen and (min-width: 1024px){
+                    height: 0.098vw;
+                }
+            }
+
+            @media screen and (min-width: 1024px){
+                padding: 1.563vw 0vw;
             }
         }
         &-item {
@@ -179,6 +240,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            @media screen and (min-width: 1024px){
+                padding-right: 3.809vw;
+            }
 
             &:first-child { 
                 position: relative;
@@ -195,6 +260,12 @@
                     border-radius: 0vw 0.613vw 0.613vw 0vw;
 
                     z-index: 1;
+
+                    @media screen and (min-width: 1024px){
+                        width: 21.387vw;
+                        height: 2.344vw; 
+                        border-radius: 0vw 0.293vw 0.293vw 0vw ;
+                    }
                 }
             }
 
@@ -213,6 +284,12 @@
                     border-radius: 0vw 0.613vw  0.613vw  0vw;
 
                     z-index: 1;
+
+                    @media screen and (min-width: 1024px){
+                        width: 5.273vw;
+                        height: 2.344vw; 
+                        border-radius: 0vw 0.293vw 0.293vw 0vw ;
+                    }
                 }
             }
 
@@ -231,6 +308,12 @@
                     border-radius: 0vw 0.613vw 0.613vw 0vw;
 
                     z-index: 1;
+
+                    @media screen and (min-width: 1024px){
+                        width: 3.516vw;
+                        height: 2.344vw; 
+                        border-radius: 0vw 0.293vw 0.293vw 0vw ;
+                    }
                 }
             }
             & > p { 
@@ -240,11 +323,22 @@
                 position: relative;
                 padding-left: 1.227vw;
                 z-index: 2;
+
+                @media screen and (min-width: 1024px){
+                    font-size: 1.270vw;
+                    line-height: 2.539vw;
+                    padding-left: 0.586vw;
+                }
             }
             & > span { 
                 font-weight: 700;
                 font-size: 2.658vw;
                 line-height: 3.067vw;
+
+                @media screen and (min-width: 1024px){
+                    font-size: 1.270vw;
+                    line-height: 1.465vw;
+                }
             }
         }
         &-total { 
@@ -255,10 +349,20 @@
             align-items: center;
             justify-content: space-between;
 
+            @media screen and (min-width: 1024px){
+                margin-top: 0.879vw;
+                padding-right: 3.809vw;
+            }
+
             & > p { 
                 font-weight: 700;
                 font-size: 3.272vw;
                 line-height: 5.317vw;
+
+                @media screen and (min-width: 1024px){
+                   font-size: 1.563vw;
+                   line-height: 2.539vw;
+                }
             }
         }
     }

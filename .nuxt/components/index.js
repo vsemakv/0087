@@ -1,6 +1,6 @@
-export { default as VComment } from '../../components/VComment.vue'
-export { default as VOwner } from '../../components/VOwner.vue'
-export { default as VProfile } from '../../components/VProfile.vue'
+export const VComment = () => import('../../components/VComment.vue' /* webpackChunkName: "components/v-comment" */).then(c => wrapFunctional(c.default || c))
+export const VOwner = () => import('../../components/VOwner.vue' /* webpackChunkName: "components/v-owner" */).then(c => wrapFunctional(c.default || c))
+export const VProfile = () => import('../../components/VProfile.vue' /* webpackChunkName: "components/v-profile" */).then(c => wrapFunctional(c.default || c))
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

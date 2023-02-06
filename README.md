@@ -2,8 +2,6 @@
 # Simulating viewing a profile and adding a comment for mobile app
 # Netlify: https://chic-shortbread-c75faf.netlify.app/
 
-# 0087
-
 ## Build Setup
 
 ```bash

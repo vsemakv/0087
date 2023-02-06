@@ -24,9 +24,10 @@
                     VComment(
                         :day="commentator.day"
                         :comment="commentator.comment"
+                        :name="commentator.name"
                     )
         .profile__form
-            textarea(type='text' v-model="comment" require).profile__form-input  
+            textarea(type='text' v-model="comment" require).profile__form-input.textarea  
             button(@click.prevent="addComment" :disabled="isEmpty" ).profile__form-button Send a comment
 </template>
 
@@ -77,27 +78,6 @@ import VOwner from '@/components/VOwner.vue';
                 isEmpty: true,
             }
         },
-        watch: { 
-            comment(){
-                if(this.comment.length !== 0 ){
-                    this.isEmpty = false
-                }else{
-                    this.isEmpty = true
-                }
-
-                if(this.comment == " ") { 
-                    this.isEmpty = true
-                }else { 
-                    this.isEmpty = false
-                }
-
-                if(this.comment == "") { 
-                    this.isEmpty = false
-                }else { 
-                    this.isEmpty = true
-                }
-            }
-        },
         methods: {
             addComment() { 
                 const date = new Date();
@@ -119,12 +99,32 @@ import VOwner from '@/components/VOwner.vue';
                 this.comment = ""
             },
         },
+        watch: { 
+            comment(){
+                if(!this.comment){
+                    this.isEmpty = true
+                }else { 
+                    this.isEmpty = false
+                }
+            }
+        },
         mounted() {
             document.addEventListener('keydown', (event) => {
                 this.keysPressed[event.key] = true;
 
                 if (this.keysPressed['Control'] && event.key == 'Enter' && this.comment !== "" && this.comment !== " ") {
                     this.addComment();
+                }
+            });
+
+            let textArea = document.querySelector('.textarea');
+
+            textArea.addEventListener('keydown', function (event) {
+                if (event.which === 32 || event.key == 'Enter') {
+                    textArea.value = textArea.value.replace(/^\s+/, '');
+                    if (textArea.value.length === 0) {
+                        event.preventDefault();
+                    }
                 }
             });
 
@@ -153,6 +153,11 @@ import VOwner from '@/components/VOwner.vue';
         justify-content: space-between;
         align-items: center;
 
+        @media screen and (min-width: 1024px){
+            margin: 1.270vw auto;
+            width: 50%;
+        }
+        
         &-text { 
             display: flex;
             justify-content: space-between;
@@ -163,6 +168,12 @@ import VOwner from '@/components/VOwner.vue';
                 font-weight: 700;
                 font-size: 3.272vw;
                 line-height: 3.272vw;
+
+                @media screen and (min-width: 1024px){
+                    font-size: 1.563vw;
+                    line-height: 1.563vw;
+                    margin-right: 0.781vw;
+                }
             }
             & > a { 
                 font-weight: 400;
@@ -170,6 +181,11 @@ import VOwner from '@/components/VOwner.vue';
                 line-height: 3.272vw;
                 text-decoration-line: underline;
                 color: #005DA1;
+
+                @media screen and (min-width: 1024px){
+                    font-size: 1.363vw;
+                    line-height: 1.563vw;
+                }
             }
         }
         &-stats { 
@@ -178,10 +194,17 @@ import VOwner from '@/components/VOwner.vue';
                 font-size: 2.454vw;
                 line-height: 2.863vw;
 
+                @media screen and (min-width: 1024px){
+                    font-size: 1.172vw;
+                    line-height: 1.367vw;
+                }
                 &:nth-child(1){
                     margin-right: 8.180vw;
                     position: relative;
 
+                    @media screen and (min-width: 1024px){
+                        margin-right: 2.758vw;
+                    }
                     &::after { 
                         content: url("@/assets/images/svg/like.svg");
                         display: block;
@@ -199,6 +222,12 @@ import VOwner from '@/components/VOwner.vue';
                             width: 3.454vw;
                             height: 3.198vw;
                             left: -2.476vw;
+                            top: 0vw;
+                        }
+                        @media screen and (min-width: 1024px){
+                            width: 1.172vw;
+                            height: 1.074vw;
+                            left: -1.076vw;
                             top: 0vw;
                         }
                     }
@@ -225,6 +254,12 @@ import VOwner from '@/components/VOwner.vue';
                             left: -2.476vw;
                             top: 0.3vw;
                         }
+                        @media screen and (min-width: 1024px){
+                            width: 1.172vw;
+                            height: 1.074vw;
+                            left: -1.076vw;
+                            top: 0.18vw;
+                        }
                     }
                 }
             }
@@ -237,6 +272,11 @@ import VOwner from '@/components/VOwner.vue';
 
         @media screen and (min-width: 768px) and (max-width: 1100px){
             padding-bottom: 0;
+        }
+        @media screen and (min-width: 1024px){
+            margin: 1.270vw auto;
+            width: 50%;
+            padding-bottom: 15vw;
         }
     }
     &__form {
@@ -259,6 +299,10 @@ import VOwner from '@/components/VOwner.vue';
         @media screen and (min-width: 768px) and (max-width: 1100px){
             position: relative;
         }
+
+        @media screen and (min-width: 1024px){
+            min-height: 12.652vw;
+        }
         &-input {
             border: 0.204vw solid #000000;
             border-radius: 0.204vw;
@@ -271,6 +315,12 @@ import VOwner from '@/components/VOwner.vue';
                 width: 87.411vw;
                 height: 10.883vw;
                 font-size: 2.908vw;
+            }
+
+            @media screen and (min-width: 1024px){
+                width: 42.652vw;
+                height: 4.152vw;
+                font-size: 1.908vw;
             }
         }
 
@@ -290,6 +340,12 @@ import VOwner from '@/components/VOwner.vue';
             @media screen and (min-width: 580px){
                 padding: 1.658vw 8.816vw;
                 margin-top: 2.703vw;
+            }
+            @media screen and (min-width: 1024px){
+                margin-top: 2.246vw;
+                font-size: 1.563vw;
+                line-height: 2.051vw;
+                padding: 0.870vw 4.199vw;
             }
         }
     }
